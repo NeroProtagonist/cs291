@@ -42,23 +42,25 @@ function createStairs() {
 	var stepHorizontal = new THREE.CubeGeometry(stepWidth, stepThickness, horizontalStepDepth);
 	var stepMesh;
 
-	// Make and position the vertical part of the step
-	stepMesh = new THREE.Mesh( stepVertical, stepMaterialVertical );
-	// The position is where the center of the block will be put.
-	// You can define position as THREE.Vector3(x, y, z) or in the following way:
-	stepMesh.position.x = 0;			// centered at origin
-	stepMesh.position.y = verticalStepHeight/2;	// half of height: put it above ground plane
-	stepMesh.position.z = 0;			// centered at origin
-	scene.add( stepMesh );
+	for (var pair = 0; pair < 6; ++pair) {
+		// Make and position the vertical part of the step
+		stepMesh = new THREE.Mesh( stepVertical, stepMaterialVertical );
+		// The position is where the center of the block will be put.
+		// You can define position as THREE.Vector3(x, y, z) or in the following way:
+		stepMesh.position.x = 0;			// centered at origin
+		stepMesh.position.y = verticalStepHeight/2 + pair * (verticalStepHeight + stepThickness);	// half of height: put it above ground plane
+		stepMesh.position.z = 0 + pair * (horizontalStepDepth - 2 * stepHalfThickness);			// centered at origin
+		scene.add( stepMesh );
 
-	// Make and position the horizontal part
-	stepMesh = new THREE.Mesh( stepHorizontal, stepMaterialHorizontal );
-	stepMesh.position.x = 0;
-	// Push up by half of horizontal step's height, plus vertical step's height
-	stepMesh.position.y = stepThickness/2 + verticalStepHeight;
-	// Push step forward by half the depth, minus half the vertical step's thickness
-	stepMesh.position.z = horizontalStepDepth/2 - stepHalfThickness;
-	scene.add( stepMesh );
+		// Make and position the horizontal part
+		stepMesh = new THREE.Mesh( stepHorizontal, stepMaterialHorizontal );
+		stepMesh.position.x = 0;
+		// Push up by half of horizontal step's height, plus vertical step's height
+		stepMesh.position.y = stepThickness/2 + verticalStepHeight + pair * (stepThickness + verticalStepHeight);
+		// Push step forward by half the depth, minus half the vertical step's thickness
+		stepMesh.position.z = horizontalStepDepth/2 - stepHalfThickness + pair * (horizontalStepDepth - stepThickness);
+		scene.add( stepMesh );
+	}
 }
 
 function createCup() {
@@ -79,8 +81,8 @@ function createCup() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	var canvasWidth = 1024;
+	var canvasHeight = 768;
 	// For grading the window is fixed in size; here's general code:
 	//var canvasWidth = window.innerWidth;
 	//var canvasHeight = window.innerHeight;

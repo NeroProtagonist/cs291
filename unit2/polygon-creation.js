@@ -27,6 +27,10 @@ function PolygonGeometry(sides) {
 
 		// YOUR CODE HERE
 		//Save the vertex location - fill in the code
+		geo.vertices.push(new THREE.Vector3(x, y, 0));
+        if (pt >= 2) {
+            geo.faces.push(new THREE.Face3(0, pt-1, pt));
+        }
 
 	}
 	// YOUR CODE HERE
