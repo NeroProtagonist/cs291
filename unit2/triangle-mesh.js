@@ -34,8 +34,8 @@ function drawSquare(x1, y1, x2, y2) {
 
 function init() {
 	// Set up some parameters
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	var canvasWidth = 1280;
+	var canvasHeight = 720;
 	// For grading the window is fixed in size; here's general code:
 	//var canvasWidth = window.innerWidth;
 	//var canvasHeight = window.innerHeight;

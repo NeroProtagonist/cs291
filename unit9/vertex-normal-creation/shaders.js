@@ -15,8 +15,8 @@ var teapot;
 var phongBalancedMaterial;
 
 function init() {
-	var canvasWidth = 846; 
-	var canvasHeight = 494;
+	var canvasWidth = 1280;
+	var canvasHeight = 720;
 	var canvasRatio = canvasWidth / canvasHeight;
 
 	// LIGHTS

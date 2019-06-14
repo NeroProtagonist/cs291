@@ -268,8 +268,8 @@ function createDrinkingBird(bbird) {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	var canvasWidth = 1280;
+	var canvasHeight = 720;
 	// For grading the window is fixed in size; here's general code:
 	//var canvasWidth = window.innerWidth;
 	//var canvasHeight = window.innerHeight;
