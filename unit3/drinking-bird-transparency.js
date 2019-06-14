@@ -51,7 +51,7 @@ function drawDrinkingBird() {
 	bodyMaterial.specular.setRGB( 0.5, 0.5, 0.5 );
 
 	// MODIFY THIS TO BE TRANSPARENT:
-	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0xFFFFFF, shininess: 100 } );
+	var glassMaterial = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0xffffff, shininess: 100, opacity: 0.3, transparent: true } );
 
 	var legMaterial = new THREE.MeshPhongMaterial( { shininess: 4 } );
 	legMaterial.color.setHex( 0xAdA79b );
@@ -180,8 +180,8 @@ function drawDrinkingBird() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	var canvasWidth = 1280;
+	var canvasHeight = 720;
 	// For grading the window is fixed in size; here's general code:
 	//var canvasWidth = window.innerWidth;
 	//var canvasHeight = window.innerHeight;

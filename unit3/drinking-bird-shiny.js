@@ -44,18 +44,26 @@ function createDrinkingBird() {
 	headMaterial.color.g = 1/255;
 	headMaterial.color.b = 5/255;
 
-	var hatMaterial = new THREE.MeshLambertMaterial( );
+	var hatMaterial = new THREE.MeshPhongMaterial( );
 	hatMaterial.color.r = 24/255;
 	hatMaterial.color.g = 38/255;
 	hatMaterial.color.b = 77/255;
+	hatMaterial.specular.setRGB(0.5, 0.5, 0.5);
+	hatMaterial.shininess = 100;
 
-	var bodyMaterial = new THREE.MeshLambertMaterial( );
+	var bodyMaterial = new THREE.MeshPhongMaterial( );
 	bodyMaterial.color.setRGB( 31/255, 86/255, 169/255 );
+	bodyMaterial.specular.setRGB(0.5, 0.5, 0.5);
+	bodyMaterial.shininess = 100;
 
-	var legMaterial = new THREE.MeshLambertMaterial( );
+	var legMaterial = new THREE.MeshPhongMaterial( );
 	legMaterial.color.setHex( 0xAdA79b );
+	legMaterial.specular.setRGB(0.5, 0.5, 0.5);
+	legMaterial.shininess = 4;
 
-	var footMaterial = new THREE.MeshLambertMaterial( { color: 0x960f0b } );
+	var footMaterial = new THREE.MeshPhongMaterial( { color: 0x960f0b } );
+	footMaterial.specular.setRGB(0.5, 0.5, 0.5);
+	footMaterial.shininess = 30;
 
 	var sphere, cylinder, cube;
 
@@ -153,8 +161,8 @@ function createDrinkingBird() {
 }
 
 function init() {
-	var canvasWidth = 846;
-	var canvasHeight = 494;
+	var canvasWidth = 1280;
+	var canvasHeight = 720;
 	// For grading the window is fixed in size; here's general code:
 	//var canvasWidth = window.innerWidth;
 	//var canvasHeight = window.innerHeight;
