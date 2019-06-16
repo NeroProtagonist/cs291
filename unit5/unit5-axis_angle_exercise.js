@@ -57,6 +57,35 @@ function fillScene() {
 	cylinder.matrix.makeRotationAxis( rotationAxis, theta );
 	scene.add( cylinder );
 
+	cylinder = new THREE.Mesh(
+		new THREE.CylinderGeometry( 0.2, 0.2, cylLength, 32 ), cylinderMaterial );
+	rotationAxis = new THREE.Vector3(1,0,1);
+	// makeRotationAxis wants its axis normalized
+	rotationAxis.normalize();
+	// don't use position, rotation, scale
+	cylinder.matrixAutoUpdate = false;
+	cylinder.matrix.makeRotationAxis( rotationAxis, theta );
+	scene.add( cylinder );
+
+	cylinder = new THREE.Mesh(
+		new THREE.CylinderGeometry( 0.2, 0.2, cylLength, 32 ), cylinderMaterial );
+	rotationAxis = new THREE.Vector3(-1,0,-1);
+	// makeRotationAxis wants its axis normalized
+	rotationAxis.normalize();
+	// don't use position, rotation, scale
+	cylinder.matrixAutoUpdate = false;
+	cylinder.matrix.makeRotationAxis( rotationAxis, theta );
+	scene.add( cylinder );
+
+	cylinder = new THREE.Mesh(
+		new THREE.CylinderGeometry( 0.2, 0.2, cylLength, 32 ), cylinderMaterial );
+	rotationAxis = new THREE.Vector3(-1,0,1);
+	// makeRotationAxis wants its axis normalized
+	rotationAxis.normalize();
+	// don't use position, rotation, scale
+	cylinder.matrixAutoUpdate = false;
+	cylinder.matrix.makeRotationAxis( rotationAxis, theta );
+	scene.add( cylinder );
 }
 
 function drawHelpers() {
