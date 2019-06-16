@@ -80,6 +80,8 @@ function fillScene() {
 	sphere.position.y = 18;	// move the hand above the other hand
 
 	// YOUR CODE HERE:
+	sphere.rotation.y = - 11 / 12 * 2 * Math.PI;
+	sphere.scale.set(3, 0.2, 0.2);
 
 	scene.add( sphere );
 }

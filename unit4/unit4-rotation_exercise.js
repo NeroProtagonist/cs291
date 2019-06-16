@@ -73,6 +73,7 @@ function fillScene() {
 	cube.position.y = 14;
 
 	// YOUR CODE HERE
+	cube.rotation.y = - 2 / 12 * 2 * Math.PI;
 
 	scene.add( cube );
 }
