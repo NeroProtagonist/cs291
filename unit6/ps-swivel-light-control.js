@@ -256,6 +256,10 @@ function animate() {
 function render() {
 	var delta = clock.getDelta();
 	cameraControls.update(delta);
+
+	light.position.x = 1.0 * Math.cos(THREE.Math.degToRad(effectController.angle));
+	light.position.z = 1.0 * Math.sin(THREE.Math.degToRad(effectController.angle));
+
 	renderer.render(scene, camera);
 }
 
