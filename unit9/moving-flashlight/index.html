@@ -49,19 +49,19 @@ void main() {
 
 	// compute direction to light
 	vec4 lDirection = viewMatrix * vec4( uDirLightPos, 0.0 );
-	
+
 	// normalize the light direction to get the light vector
 	vec3 lVector = normalize( lDirection.xyz );
 
 	// flashlight: is XY point in camera space inside radius?
 	// Student: compare view position to uFlashOffset and see
 	// if distance between the two is inside uFlashRadius
-	if ( length( vViewPosition.xy ) > uFlashRadius ) {
+	if ( length( vViewPosition.xy - uFlashOffset ) > uFlashRadius ) {
 		return;
 	}
 
 	vec3 normal = normalize( vNormal );
-	
+
 	// diffuse: N * L. Normal must be normalized, since it's interpolated.
 	float diffuse = max( dot( normal, lVector ), 0.0);
 
