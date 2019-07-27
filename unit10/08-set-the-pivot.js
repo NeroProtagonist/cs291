@@ -333,11 +333,17 @@ function createDrinkingBird(bbird) {
 	// pivotHeight is the height of the crossbar
 	var pivotHeight = 360;
 
+	bodyhead.position.y = -pivotHeight;
+
+	var shift = new THREE.Object3D();
+	shift.add(bodyhead);
+	shift.position.y = pivotHeight;
+
 	// add field for animated part, for simplicity
-	bbird.animated = bodyhead;
+	bbird.animated = shift;
 
 	bbird.add(support);
-	bbird.add(bodyhead);
+	bbird.add(shift);
 
 	// go through all objects and set the meshes (only)
 	// so that they cast shadows
